@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import React from 'react'
 import MediaPreloader from './MediaPreloader';
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 
 import Link from 'next/link';
 
 
 function Story() {
 
-  const sectionVariants = {
+  const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 50 }, // Start hidden, slightly below final position
     visible: {
       opacity: 1,
@@ -42,7 +42,7 @@ function Story() {
             className='w-full h-full object-cover rounded-[24px]'
           />
         </div>
-  <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:pr-16 px-4'>
+        <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:pr-16 px-4'>
           <div className='self-stretch text-h3 xl:text-h2 text-black text-center lg:text-left'>
             Story Behind Sun Tea Mix
           </div>

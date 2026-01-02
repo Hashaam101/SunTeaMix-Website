@@ -2,11 +2,11 @@
 "use client";
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import MediaPreloader from './MediaPreloader';
 
 // Animation variants for framer-motion
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
