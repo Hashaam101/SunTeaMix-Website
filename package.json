@@ -10,25 +10,25 @@
     "export": "next export"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.27.8",
-    "@rive-app/react-canvas": "^4.19.1",
-    "firebase": "^11.6.0",
-    "framer-motion": "^12.6.5",
-    "next": "15.3.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "@floating-ui/react": "^0.27.16",
+    "@rive-app/react-canvas": "^4.25.1",
+    "firebase": "^11.10.0",
+    "framer-motion": "^12.23.26",
+    "next": "16.1.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-slick": "^0.30.3",
     "react-social-media-embed": "^2.5.18",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^20.19.27",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "@types/react-slick": "^0.23.13",
-    "sass": "^1.87.0",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "sass": "^1.97.1",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
   }
 }
