@@ -51,7 +51,7 @@ function Story() {
             <br /><br />
             Founded in 2020, our mission has always been simple:
             <br /> ☀ Bring people together through fresh flavors
-            <br /> ☀ Use real fruit, never powder
+            <br /> ☀ Use real fruits
             <br /> ☀ Serve the fluffiest soufflé pancakes in Honolulu
             <br /><br />
             From students at the nearby college to Waikiki visitors hunting for the best dessert spots, SunTea Mix has become a must-visit for anyone searching for <b>boba near me</b> or <b>soufflé pancakes Honolulu</b>.

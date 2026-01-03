@@ -168,24 +168,24 @@ function Featuring() {
         <div className='mx-auto w-full max-w-[1240px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-0'>
           <div className='relative aspect-square max-w-[540px] max-h-[540px] block w-[60%] h-auto lg:w-[400px] lg:h-[400px] xl:w-[540px] xl:h-[540px] shrink-0 rounded-[24px] object-cover'>
             <MediaPreloader
-              src="/Images/featuring/3.webp"
-              alt="Best Smoothies & Yogurt Blends in Honolulu, Hawaii."
+              src="/Images/featuring/3.png"
+              alt="Mango Charm"
               borderRadius="24px"
               className='w-full h-full object-cover'
             />
             <Image
-              src="/Images/featuring/3.webp"
-              alt="Best Smoothies & Yogurt Blends in Honolulu, Hawaii."
+              src="/Images/featuring/3.png"
+              alt="Mango Charm"
               width={540} height={540} priority
               className='w-full h-full object-cover rounded-[24px]'
             />
           </div>
           <div className='flex w-full lg:w-fit max-w-[560px] flex-col items-center lg:items-start gap-[10px] md:gap-[20px] mt-8 lg:mt-0 lg:pl-8'>
             <div className='self-stretch text-h3 xl:text-h2 text-black text-center lg:text-left'>
-              Smoothies & Yogurt Blends
+              Mango Charm
             </div>
             <div className='text-normal4 md:text-normal3 text-grey text-center lg:text-left'>
-              Perfect for a refreshing, healthy twist.
+              Fresh mango, grapefruit, crystal boba, mango milk shake.
             </div>
           </div>
         </div>
