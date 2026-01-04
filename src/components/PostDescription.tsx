@@ -25,7 +25,7 @@ export const PostDescription: React.FC<PostDescriptionProps> = ({
 					</span>
 					{text.split("\n").length > 2 && (
 						<button
-							className="text-blue-500 mt-2 hover:underline"
+							className="mt-2 text-blue-500 hover:underline"
 							onClick={(e) => {
 							e.stopPropagation();
 							setExpanded(!expanded);

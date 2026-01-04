@@ -21,7 +21,7 @@ const PromotionalBanner: React.FC<PromotionalBannerProps> = ({
   buttonUrl
 }) => {
   return (
-    <div className="relative w-full h-full sm:h-[500px] md:h-[664px] p-[42px] rounded-lg overflow-hidden"
+    <div className="relative h-full w-full overflow-hidden rounded-lg p-[42px] sm:h-[500px] md:h-[664px]"
         style={{
             flexDirection: 'column',
             alignItems: 'flex-start',
@@ -41,7 +41,7 @@ const PromotionalBanner: React.FC<PromotionalBannerProps> = ({
       </div>
       
       {/* Content Overlay */}
-      <div className="max-w-[584px] h-full flex flex-col items-start justify-center px-[30px] md:py-[114px] md:px-[50px] gap-2.5 flex-1 rounded-[28px] bg-black/25 backdrop-blur-[13px]">
+      <div className="flex h-full max-w-[584px] flex-1 flex-col items-start justify-center gap-2.5 rounded-[28px] bg-black/25 px-[30px] backdrop-blur-[13px] md:px-[50px] md:py-[114px]">
 				<div
 					style={{
 						display: "flex",
@@ -51,15 +51,15 @@ const PromotionalBanner: React.FC<PromotionalBannerProps> = ({
 					}}
 				>
 
-					<h2 className="text-h4 md:text-h2 font-medium text-white w-[70%]">{title}</h2>
+					<h2 className="w-[70%] text-h4 font-medium text-white md:text-h2">{title}</h2>
 					
-					<p className="text-white/65 text-normal2 md:text-normal1">
+					<p className="text-normal2 text-white/65 md:text-normal1">
 						{description}
 					</p>
 					
 					<ThemeButton/>
 
-          <div className='h-3 block sm:hidden'/>
+          <div className='block h-3 sm:hidden'/>
 
 
 				</div>

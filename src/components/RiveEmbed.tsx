@@ -69,7 +69,7 @@ export default function RiveButton({ onBtnPress, isDisabled = false }: RiveButto
 
   return (
     <div 
-      className='w-[380px] h-[110px] cursor-pointer -translate-x-2 -translate-y-4'
+      className='h-[110px] w-[380px] -translate-x-2 -translate-y-4 cursor-pointer'
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}

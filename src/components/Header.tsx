@@ -41,11 +41,11 @@ function Header( {onClick} : {onClick: () => void}) {
 
 
   return (
-    <div className="p-[20px] w-full">
+    <div className="w-full p-[20px]">
       
-      <div className={`w-full grid grid-cols-2 md:grid-cols-3 items-center`}>
+      <div className={`grid w-full grid-cols-2 items-center md:grid-cols-3`}>
         {/* Left Section */}
-        <div className="hidden md:flex justify-start">
+        <div className="hidden justify-start md:flex">
             <AnimatedMenuButton
                 menuItems={[
                     { name: "Home", onclick: () => { scrollToSection('Home') } },
@@ -62,7 +62,7 @@ function Header( {onClick} : {onClick: () => void}) {
         {/* Center Section (Always Centered) */}
         <div className={`flex justify-start md:justify-center`}>
             <div
-            className="relative text-white cursor-pointer"
+            className="relative cursor-pointer text-white"
             onClick={() => { window.location.pathname = "/"; }}
             >
             <span
@@ -77,14 +77,14 @@ function Header( {onClick} : {onClick: () => void}) {
               alt="Sun Tea Mix Logo"
               width={70}
               height={70}
-              className="object-cover rounded-full"
+              className="rounded-full object-cover"
               priority
             />
             </div>
         </div>
 
         {/* Right Section */}
-        <div className="flex justify-end w-full">
+        <div className="flex w-full justify-end">
             <AnimatedCTAButton 
               buttonLeft={() => { router.push("tel:+1(808)219-5749") }}
               buttonRight={() => { window.open("https://www.clover.com/online-ordering/sun-tea-mix-honolulu", "_blank") }}

@@ -97,7 +97,7 @@ const MediaPreloader: React.FC<MediaPreloaderProps> = ({
           ref={imgRef}
           src={src}
           alt={alt}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`h-full w-full object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
           style={{ borderRadius }}
           onLoad={handleLoaded}
           onError={handleError}
@@ -107,7 +107,7 @@ const MediaPreloader: React.FC<MediaPreloaderProps> = ({
           ref={videoRef}
           src={src}
           controls
-          className={`w-full h-full object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`h-full w-full object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
           style={{ borderRadius }}
           onLoadedData={handleLoaded}
           onError={handleError}
@@ -117,9 +117,9 @@ const MediaPreloader: React.FC<MediaPreloaderProps> = ({
       )}
   {/* Overlay spinner only if not loaded, or if forcePreloader is on */}
   {(!loaded || forcePreloader) && !error && (
-        <div className="absolute inset-0 flex items-center justify-center z-10" style={{ borderRadius }}>
+        <div className="absolute inset-0 z-10 flex items-center justify-center" style={{ borderRadius }}>
           {/* Solid grey background */}
-          <div className="absolute inset-0 bg-[#c0c0c0] w-full h-full" style={{ borderRadius }} />
+          <div className="absolute inset-0 h-full w-full bg-[#c0c0c0]" style={{ borderRadius }} />
           {/* lds-roller loader */}
           <style>{`
             .lds-roller,

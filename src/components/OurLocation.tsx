@@ -42,11 +42,11 @@ const LocationComponent = () => {
   
   return (
     <div className="mx-[70px]">
-      <h2 className="text-h2 mb-[32px]">Our Location</h2>
+      <h2 className="mb-[32px] text-h2">Our Location</h2>
       
       <div className="relative">
         {/* Map Container */}
-        <div className="w-full h-[400px] rounded-[14px] overflow-hidden">
+        <div className="h-[400px] w-full overflow-hidden rounded-[14px]">
             <iframe
               width="100%"
               height="100%"
@@ -57,10 +57,10 @@ const LocationComponent = () => {
         </div>
 
         {/* Overlay Container */}
-        <div className="hidden absolute inset-0 z-20 p-[16px] md:flex flex-wrap justify-between pointer-events-none">
+        <div className="pointer-events-none absolute inset-0 z-20 hidden flex-wrap justify-between p-[16px] md:flex">
         
           <div className='flex flex-col gap-2'>
-            <div className="flex flex-col h-fit w-[264px] px-[24px] py-[21px] items-start gap-[10px] self-stretch rounded-[30px] border-primary-dark/25 border bg-white/40 shadow-black/15 shadow-[6px] backdrop-blur-[14px] z-99">
+            <div className="z-99 flex h-fit w-[264px] flex-col items-start gap-[10px] self-stretch rounded-[30px] border border-primary-dark/25 bg-white/40 px-[24px] py-[21px] shadow-[6px] shadow-black/15 backdrop-blur-[14px]">
                 <div>
                     {locationData.title && <div className="text-normal2 font-medium text-black/50">{locationData.title}</div>}
                     <p className="text-normal2 font-medium text-black">{locationData.subtitle}</p>
@@ -74,7 +74,7 @@ const LocationComponent = () => {
 
                 <div className='w-full'>
                     <button 
-                      className='h-[25px] w-full flex items-center justify-center bg-primary rounded-full text-white z-100 cursor-pointer pointer-events-auto'
+                      className='pointer-events-auto z-100 flex h-[25px] w-full cursor-pointer items-center justify-center rounded-full bg-primary text-white'
                       onClick={() => {
                         console.log("Opening Google Maps for directions...");
                         window.open(`https://www.google.com/maps?q=${encodeURIComponent(locationData.mapQuery)}`, '_blank');
@@ -84,19 +84,19 @@ const LocationComponent = () => {
                     </button>
                 </div>
             </div>
-							<div className="flex flex-col h-fit w-[220px] px-[24px] py-[21px] items-start gap-[10px] self-stretch rounded-[30px] border-primary-dark/25 border bg-white/40 shadow-black/15 shadow-[6px] backdrop-blur-[14px]">
+							<div className="flex h-fit w-[220px] flex-col items-start gap-[10px] self-stretch rounded-[30px] border border-primary-dark/25 bg-white/40 px-[24px] py-[21px] shadow-[6px] shadow-black/15 backdrop-blur-[14px]">
 									<div>
 											<div className='text-normal4 text-black/50'>
 													Address
 											</div>
-											<div className='text-normal4 text-black leading-[24px] mb-[10px]'>
+											<div className='mb-[10px] text-normal4 leading-[24px] text-black'>
 												{locationData.mapQuery}
 											</div>
 
 											<div className='text-normal4 text-black/50'>
 													Contact
 											</div>
-											<div className='text-normal4 text-black leading-[24px]'>
+											<div className='text-normal4 leading-[24px] text-black'>
 												{locationData.contact?.phone}
 												<br />
 												{locationData.contact?.email}
@@ -107,24 +107,24 @@ const LocationComponent = () => {
           
 
 
-          <div className="flex flex-col h-fit w-[264px] px-[24px] py-[21px] items-end gap-[10px] self-stretch rounded-[30px] border-primary-dark/25 border bg-white/40 shadow-black/15 shadow-[6px] backdrop-blur-[14px]">
+          <div className="flex h-fit w-[264px] flex-col items-end gap-[10px] self-stretch rounded-[30px] border border-primary-dark/25 bg-white/40 px-[24px] py-[21px] shadow-[6px] shadow-black/15 backdrop-blur-[14px]">
               {/* <div className="w-full">
                 <p className="text-normal4 font-medium">Opens at {locationData.openingTime}</p>
               </div> */}
             
             {locationData.openingHours && locationData.openingHours.length > 0 && (
               <div className="w-full">
-                <h4 className="text-normal4 font-medium text-center text-gray-800 mb-2">Timings</h4>
+                <h4 className="mb-2 text-center text-normal4 font-medium text-gray-800">Timings</h4>
                 <div className="">
                   {locationData.openingHours.map((item, index) => (
                     <React.Fragment key={index}>
-											<div className='w-full flex items-center justify-between'>
+											<div className='flex w-full items-center justify-between'>
 												<p className="text-normal4 text-black/60">{item.day}</p>
 												<p className="text-normal4 text-black/60">{item.hours}</p>
 											</div>
                     </React.Fragment>
                   ))}
-                  <p className="text-normal4 text-black/60 mt-2">{locationData.extraInfo}</p>
+                  <p className="mt-2 text-normal4 text-black/60">{locationData.extraInfo}</p>
                 </div>
               </div>
             )}

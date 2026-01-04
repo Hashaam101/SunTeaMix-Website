@@ -37,7 +37,7 @@ const Spinner: React.FC<SpinnerProps> = ({
   ];
 
   return (
-    <div className={`flex justify-center items-center ${className}`}>
+    <div className={`flex items-center justify-center ${className}`}>
       <svg
         width={size}
         height={size}

@@ -15,7 +15,7 @@ const Reviews = () => {
                 background: "var(--primary-dark)",
             }}
         >
-            <div className="absolute h-full w-full bg-primary-dark -z-20">
+            <div className="absolute -z-20 h-full w-full bg-primary-dark">
                 {/* <Image
             src={pattern}
             alt="bg pattern"
@@ -24,7 +24,7 @@ const Reviews = () => {
         /> */}
             </div>
 
-            <div className='py-[46px] px-[15px] sm:py-[76px] sm:px-[52px]'
+            <div className='px-[15px] py-[46px] sm:px-[52px] sm:py-[76px]'
                 style={{
                     display: 'flex',
                     width: '',
@@ -36,19 +36,19 @@ const Reviews = () => {
 
                 <div>
                     <div className="
-            text-center text-h2 sm:text-h3 md:text-h2 text-white w-full">
+            w-full text-center text-h2 text-white sm:text-h3 md:text-h2">
                         What our Customers are Saying
                     </div>
 
                     <div
-                        className="sm:text-normal1 md:text-h5 w-full text-center font-medium mt-[20px]"
+                        className="mt-[20px] w-full text-center font-medium sm:text-normal1 md:text-h5"
                         style={{ color: 'color-mix(in oklab, var(--color-white) 50%, transparent)' }}
                     >
                         Check out our most recent reviews!
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                     <ReviewCard
                         starCount={5}
                         reviewText="Decent soufflé pancakes! The portion size is perfect for a snack (two pancakes stacked on top of each other). The batter was a tad bit dense to my liking, but still tasted pretty good!"
@@ -79,7 +79,7 @@ const Reviews = () => {
                         text="Give Us a Review"
                         textClassname="pr-[8px] pl-[14px]"
                         textColor="text-grey"
-                        className="bg-white border-2 hover:border-2 hover:bg-white"
+                        className="border-2 bg-white hover:border-2 hover:bg-white"
                         iconBgColor="bg-black/5"
                         iconBgHoverColor="bg-primary-dark/10"
                         iconColor="text-primary"

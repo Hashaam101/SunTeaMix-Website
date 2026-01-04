@@ -24,20 +24,20 @@ const FAQ: React.FC<FAQSectionProps> = ({
   };
 
   return (
-    <div className="w-full px-[20px] md:px-[70px] py-8 ">
-      <h2 className="text-h4 text-center font-medium sm:font-normal sm:text-left sm:text-h2 mb-[32px]">{title}</h2>
+    <div className="w-full px-[20px] py-8 md:px-[70px] ">
+      <h2 className="mb-[32px] text-center text-h4 font-medium sm:text-left sm:text-h2 sm:font-normal">{title}</h2>
       
       <div className="space-y-[10px]">
         {faqItems.map((item, index) => (
           <div key={index} className="border-b border-grey/50"
           >
             <button
-              className="w-full py-4 flex justify-between items-center text-left"
+              className="flex w-full items-center justify-between py-4 text-left"
               onClick={() => toggleQuestion(index)}
             >
-              <span className="text-normal2 sm:text-h5 font-medium">{item.question}</span>
+              <span className="text-normal2 font-medium sm:text-h5">{item.question}</span>
               <svg
-                className={`w-5 h-5 transition-transform ${openIndex === index ? 'transform rotate-180' : ''}`}
+                className={`h-5 w-5 transition-transform ${openIndex === index ? 'rotate-180 transform' : ''}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -53,10 +53,10 @@ const FAQ: React.FC<FAQSectionProps> = ({
             
             <div 
               className={`overflow-hidden transition-all duration-300  ${
-                openIndex === index ? 'max-h-96 py-[20px] border-t border-grey/50 bg-grey/5' : 'max-h-0'
+                openIndex === index ? 'max-h-96 border-t border-grey/50 bg-grey/5 py-[20px]' : 'max-h-0'
               }`}
             >
-              <p className="text-grey text-normal3 pl-[10px]">{item.answer}</p>
+              <p className="pl-[10px] text-normal3 text-grey">{item.answer}</p>
             </div>
           </div>
         ))}

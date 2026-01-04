@@ -23,7 +23,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   const stars = Math.min(Math.max(0, starCount), 5);
   
   return (
-    <div className="flex flex-col items-start gap-3 p-[20px_30px] rounded-2xl bg-white shadow-[0px_0px_18px_0px_rgba(0,0,0,0.12)]">
+    <div className="flex flex-col items-start gap-3 rounded-2xl bg-white p-[20px_30px] shadow-[0px_0px_18px_0px_rgba(0,0,0,0.12)]">
       {/* Star Rating */}
       <div className="flex">
         {[...Array(5)].map((_, index) => (
@@ -34,29 +34,29 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       </div>
 
       {/* Review Text */}
-      <p className="text-normal3 sm:text-normal1 text-gray-800">
+      <p className="text-normal3 text-gray-800 sm:text-normal1">
         {reviewText}
       </p>
 
       {/* Reviewer Info */}
-      <div className="flex items-center mt-auto gap-2 w-full">
+      <div className="mt-auto flex w-full items-center gap-2">
         {profileImage && (
-          <div className="w-8 h-8 overflow-hidden rounded-full">
+          <div className="h-8 w-8 overflow-hidden rounded-full">
             <Image 
               src={profileImage}
               alt={`${reviewerName}'s profile`}
               width={32}
               height={32}
-              className="object-cover w-full h-full"
+              className="h-full w-full object-cover"
               style={{ width: 'auto', height: 'auto' }}
             />
           </div>
         )}
-        <div className="flex w-full justify-between items-center">
-          <span className="text-grey font-medium">{reviewerName}</span>
+        <div className="flex w-full items-center justify-between">
+          <span className="font-medium text-grey">{reviewerName}</span>
           {redirect && (
             <a
-              className="text-grey/50 hover:text-grey cursor-pointer"
+              className="cursor-pointer text-grey/50 hover:text-grey"
               href={redirect}
               target="_blank"
               rel="noopener noreferrer"

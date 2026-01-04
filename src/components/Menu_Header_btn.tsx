@@ -73,18 +73,18 @@ export function AnimatedMenuButton({ menuItems }: AnimatedMenuButtonProps) {
     <div className="flex flex-col items-center">
       {/* Button */}
       <button 
-        className="w-10 h-[14px] flex flex-col justify-evenly bg-transparent border-none cursor-pointer p-0 z-100"
+        className="z-100 flex h-[14px] w-10 cursor-pointer flex-col justify-evenly border-none bg-transparent p-0"
         onClick={toggleMenu}
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         <motion.div
-          className="w-[24px] h-[1.75px] bg-[#000] rounded-full"
+          className="h-[1.75px] w-[24px] rounded-full bg-[#000]"
           variants={topLineVariants}
           animate={isOpen ? "open" : "closed"}
           transition={{ duration: 0.3 }}
         />
         <motion.div
-          className="w-[24px] h-[1.75px] bg-[#000] rounded-full"
+          className="h-[1.75px] w-[24px] rounded-full bg-[#000]"
           variants={bottomLineVariants}
           animate={isOpen ? "open" : "closed"}
           transition={{ duration: 0.3 }}
@@ -93,7 +93,7 @@ export function AnimatedMenuButton({ menuItems }: AnimatedMenuButtonProps) {
 
       {/* Menu Items */}
       <motion.div
-        className="w-fit top-18 left-5 mt-2 absolute bg-[#fff] rounded-lg shadow-lg overflow-hidden z-100"
+        className="absolute top-18 left-5 z-100 mt-2 w-fit overflow-hidden rounded-lg bg-[#fff] shadow-lg"
         variants={menuVariants}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
@@ -101,7 +101,7 @@ export function AnimatedMenuButton({ menuItems }: AnimatedMenuButtonProps) {
         {menuItems.map((item, index) => (
           <motion.div
             key={index}
-            className="py-2 px-8 text-normal4 hover:bg-gray-100 cursor-pointer"
+            className="cursor-pointer px-8 py-2 text-normal4 hover:bg-gray-100"
             variants={menuItemVariants}
             onClick= {() => {item.onclick()}}
           >

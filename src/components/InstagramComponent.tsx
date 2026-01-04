@@ -26,8 +26,8 @@ const InstagramFeed: React.FC<{ posts: InstagramPost[] }> = ({ posts }) => {
 
 	return (
 		<div className="">
-			<div className="lg:container mx-auto px-4">
-				<h1 className="text-h3 sm:text-h2 text-black w-full text-center mb-[20px]">
+			<div className="mx-auto px-4 lg:container">
+				<h1 className="mb-[20px] w-full text-center text-h3 text-black sm:text-h2">
 					Instagram Feed
 				</h1>
 

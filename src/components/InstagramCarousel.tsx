@@ -142,13 +142,13 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 	return (
 		<div
 			ref={containerRef}
-			className="instagram-carousel-container w-[95%] mx-auto"
+			className="instagram-carousel-container mx-auto w-[95%]"
 		>
 			<Slider ref={sliderRef} {...defaultSliderSettings}>
 				{posts.map((post, index) => (
 					<div
 						key={index}
-						className="instagram-slide flex justify-center items-center h-full"
+						className="instagram-slide flex h-full items-center justify-center"
 						style={{
 							display: "flex",
 							justifyContent: "center",
@@ -162,7 +162,7 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 								maxWidth: "",
 								height: "auto",
 							}}
-							className="instagram-embed-container flex justify-center items-center"
+							className="instagram-embed-container flex items-center justify-center"
 						>
 							<InstagramPostCard post={post} />
 						</div>
@@ -273,7 +273,7 @@ const InstagramPostCard: React.FC<{ post: InstagramPost; height?: number }> = ({
 
 	return (
 		<div
-			className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer bg-white border border-gray-300"
+			className="relative cursor-pointer overflow-hidden rounded-lg border border-gray-300 bg-white shadow-lg"
 			onClick={() => window.open(post.url, "_blank")}
 			style={{
 				maxWidth: "75vw",
@@ -288,18 +288,18 @@ const InstagramPostCard: React.FC<{ post: InstagramPost; height?: number }> = ({
 								src={post.image}
 								alt={post.title}
 								borderRadius="0.5rem"
-								className="w-full h-full object-cover"
+								className="h-full w-full object-cover"
 							/>
 						</div>
 			</div>
 
 			{/* Content Container */}
-			<div className="px-4 text-black z-30 w-full bg-white bg-opacity-90 py-2">
-				<div className="leading-tight w-full flex justify-between items-center">
+			<div className="bg-opacity-90 z-30 w-full bg-white px-4 py-2 text-black">
+				<div className="flex w-full items-center justify-between leading-tight">
 							{post.title ? (
 								<span className="text-lg font-medium">{post.title}</span>
 							) : (
-								<span className="inline-block bg-gray-300 rounded w-24 h-5 animate-pulse" />
+								<span className="inline-block h-5 w-24 animate-pulse rounded bg-gray-300" />
 							)}
 					<InstagramIcon />
 				</div>
@@ -307,7 +307,7 @@ const InstagramPostCard: React.FC<{ post: InstagramPost; height?: number }> = ({
 						{post.description ? (
 							<PostDescription description={post.description} />
 						) : (
-							<span className="block bg-gray-200 rounded w-full h-4 animate-pulse mb-2" />
+							<span className="mb-2 block h-4 w-full animate-pulse rounded bg-gray-200" />
 						)}
 			</div>
 		</div>

@@ -47,15 +47,15 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({
 
     // Define the common visual content
     const buttonContent = (
-        <div className={`group ${className} border ${borderColor} hover:scale-105 shadow-lg hover:shadow-xl rounded-[9px] min-w-[157px] min-h-[41px] w-fit overflow-hidden flex hover:bg-primary-dark bg-primary transition-all duration-200 items-center ${borderHoverColor}`}>
-            <div className={`text-nowrap text-normal2 font-bold ${textColor} ${textClassname} mx-auto h-full flex items-center justify-center`}>
+        <div className={`group ${className} border ${borderColor} flex min-h-[41px] w-fit min-w-[157px] items-center overflow-hidden rounded-[9px] bg-primary shadow-lg transition-all duration-200 hover:scale-105 hover:bg-primary-dark hover:shadow-xl ${borderHoverColor}`}>
+            <div className={`text-normal2 font-bold text-nowrap ${textColor} ${textClassname} mx-auto flex h-full items-center justify-center`}>
                 {text}
             </div>
             {showArrow && (
-                <div className='flex justify-end m-[5px]'>
-                    <div className={`w-[31px] h-[31px] ${iconBgColor} group-hover:${iconBgHoverColor} rounded-[7px] transition-all duration-300 flex items-center justify-center`}>
+                <div className='m-[5px] flex justify-end'>
+                    <div className={`h-[31px] w-[31px] ${iconBgColor} group-hover:${iconBgHoverColor} flex items-center justify-center rounded-[7px] transition-all duration-300`}>
                         <svg
-                            className={`w-6 h-6 ${iconColor} group-hover:${iconHoverColor}`}
+                            className={`h-6 w-6 ${iconColor} group-hover:${iconHoverColor}`}
                             style={{ transform: `rotate(${arrowRotation}deg)` }}
                             fill="none"
                             stroke="currentColor"

@@ -95,17 +95,17 @@ export default function Home_menu_section() {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <div className='relative w-full h-full overflow-hidden sm:h-[460px] rounded-l-[12px] bg-primary-dark flex flex-col sm:flex-row p-[20px] group'>
+    <div className='group relative flex h-full w-full flex-col overflow-hidden rounded-l-[12px] bg-primary-dark p-[20px] sm:h-[460px] sm:flex-row'>
       <div
-          className={`hidden sm:block absolute -bottom-60 -left-60 group-hover:-bottom-18 group-hover:-left-12 w-80 h-80 bg-black/10 rounded-full pointer-events-none transition-all duration-500 ease-in-out -z-0`}
+          className={`pointer-events-none absolute -bottom-60 -left-60 -z-0 hidden h-80 w-80 rounded-full bg-black/10 transition-all duration-500 ease-in-out group-hover:-bottom-18 group-hover:-left-12 sm:block`}
       />
-			<div className='h-full flex px-[8px] py-[26px] flex-col z-10'>
-				<div className='text-h3 text-white text-start leading-[1.2]'>
+			<div className='z-10 flex h-full flex-col px-[8px] py-[26px]'>
+				<div className='text-start text-h3 leading-[1.2] text-white'>
 					Trending in
 					<br />
 					Honolulu
 				</div>
-				<div className='text-white/50 text-normal1 mt-[5px]'>
+				<div className='mt-[5px] text-normal1 text-white/50'>
 					Boba • Bubble Tea • Soufflé Pancakes • Smoothies • Dessert Café
 				</div>
 
@@ -114,7 +114,7 @@ export default function Home_menu_section() {
 				<div className='text-normal3 text-white'>
 					Scroll through to explore our best-sellers
 				</div>
-				<div className='hover:bg-white/20 group-hover:translate-x-5 transition-all duration-400 rounded-full w-fit aspect-square flex items-center justify-center' 
+				<div className='flex aspect-square w-fit items-center justify-center rounded-full transition-all duration-400 group-hover:translate-x-5 hover:bg-white/20' 
           onClick={handleNextClick}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
@@ -125,12 +125,12 @@ export default function Home_menu_section() {
 					<Image
 						src={arrow}
 						alt="Arrow"
-						className="w-[24px] h-[24px] m-[10px] cursor-pointer"
+						className="m-[10px] h-[24px] w-[24px] cursor-pointer"
 					/>
 				</div>
 			</div>
 
-      <div className='overflow-x-hidden h-fit flex justify-center'>
+      <div className='flex h-fit justify-center overflow-x-hidden'>
         <ScrollableMenuCards
           ref={scrollableMenuRef}
           menuItems={popularItems}
@@ -183,7 +183,7 @@ const LocalScrollableMenuCards = ({ menuItems, ...props }: LocalScrollableMenuCa
   return (
     <div
       ref={scrollContainerRef}
-      className="flex overflow-x-auto gap-4 scrollbar-hide cursor-grab active:cursor-grabbing"
+      className="scrollbar-hide flex cursor-grab gap-4 overflow-x-auto active:cursor-grabbing"
       onMouseDown={handleMouseDown}
       onMouseLeave={handleMouseLeave}
       onMouseUp={handleMouseUp}

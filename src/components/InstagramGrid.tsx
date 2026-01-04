@@ -96,11 +96,11 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 	const hoveredColumnIndex = getHoveredColumnIndex();
 
 	return (
-		<div className="flex gap-4 mx-auto p-6">
+		<div className="mx-auto flex gap-4 p-6">
 			{columnPosts.map((columnData, columnIndex) => (
 				<motion.div
 					key={columnIndex}
-					className="flex-1 flex flex-col gap-4"
+					className="flex flex-1 flex-col gap-4"
 					style={{ height: "100%" }}
 				>
 					{columnData.map((post, postIndex) => {
@@ -127,7 +127,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 						return (
 							<motion.div
 								key={post.id}
-								className="relative rounded-lg shadow-lg cursor-pointer bg-white border border-primary-dark"
+								className="relative cursor-pointer rounded-lg border border-primary-dark bg-white shadow-lg"
 								onMouseEnter={() => setHoveredId(post.id)}
 								onMouseLeave={() => setHoveredId(null)}
 								animate={{
@@ -143,7 +143,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 									flexShrink: 0,
 								}}
 							>
-								<div className="absolute top-0 right-0 w-full h-full bg-primary blur-xl opacity-5 hover:opacity-100 -z-20" />
+								<div className="absolute top-0 right-0 -z-20 h-full w-full bg-primary opacity-5 blur-xl hover:opacity-100" />
 								{/* Image Container */}
 								<motion.div
 									className="relative h-full overflow-hidden rounded-lg"
@@ -163,13 +163,13 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 													src={post.image}
 													alt={post.title}
 													borderRadius="0.5rem"
-													className="w-full h-full object-cover"
+													className="h-full w-full object-cover"
 													style={{ objectPosition: isHovered ? 'cover' : 'center' }}
 												/>
 
 									{/* Gradient overlay */}
 									<motion.div
-										className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-20"
+										className="absolute inset-0 z-20 bg-gradient-to-t from-black/80 via-transparent to-transparent"
 										animate={{
 											opacity: isHovered ? 0.8 : 0.0,
 										}}
@@ -179,7 +179,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 
 								{/* Content Container */}
 								<motion.div
-									className="absolute bottom-0 left-0 right-0 px-4 text-white z-30 w-full rounded-lg"
+									className="absolute right-0 bottom-0 left-0 z-30 w-full rounded-lg px-4 text-white"
 									animate={{
 										opacity: shouldCompress ? 0 : 1,
 										color: isHovered ? "#fff" : "#000",
@@ -190,7 +190,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 									transition={{ duration: 0.2 }}
 								>
 									<motion.div
-										className="leading-tight w-full flex justify-between"
+										className="flex w-full justify-between leading-tight"
 										animate={{
 											fontSize: isHovered
 												? "24px"
@@ -207,7 +207,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 									>
 										{post.title.length > 28 && !isHovered
 														? (
-																<span className="inline-block bg-gray-300 rounded w-24 h-5 animate-pulse" />
+																<span className="inline-block h-5 w-24 animate-pulse rounded bg-gray-300" />
 															)
 														: post.title}
 
@@ -216,7 +216,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 												opacity: isHovered ? 0 : 0.9,
 											}}
 											transition={{ duration: 0.3 }}
-											className="ml-2 h-full flex self-center"
+											className="ml-2 flex h-full self-center"
 										>
 											<InstagramIcon />
 										</motion.div>
@@ -225,7 +225,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 									<AnimatePresence>
 										{isHovered && post.description && (
 											<motion.p
-												className="text-normal4 text-white mb-[5px]"
+												className="mb-[5px] text-normal4 text-white"
 												initial={{
 													opacity: 0,
 													height: 0,
@@ -244,7 +244,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 															<>
 																{/* Preloader for description */}
 																{!post.description ? (
-																	<span className="block bg-gray-200 rounded w-full h-4 animate-pulse mb-2" />
+																	<span className="mb-2 block h-4 w-full animate-pulse rounded bg-gray-200" />
 																) : (
 																	<PostDescription description={post.description} />
 																)}

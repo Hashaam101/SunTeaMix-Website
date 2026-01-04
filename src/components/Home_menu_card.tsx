@@ -104,7 +104,7 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
 
 
   return (
-    <div className="w-full bg-primary-dark text-white px-2 sm:px-6 pt-3 pb-0">
+    <div className="w-full bg-primary-dark px-2 pt-3 pb-0 text-white sm:px-6">
       {/* Header Section
       <div className="mb-6">
         <h2 className="text-heading-4 font-bold">{title}</h2>
@@ -120,7 +120,7 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
       {/* Scrollable Cards Section */}
       <div
         ref={scrollContainerRef}
-        className="flex overflow-x-auto gap-4 scrollbar-hide cursor-grab active:cursor-grabbing"
+        className="scrollbar-hide flex cursor-grab gap-4 overflow-x-auto active:cursor-grabbing"
         onMouseDown={e => {
           // Only start drag if not on selectable text
           if ((e.target as HTMLElement).closest('.selectable-text')) return;
@@ -150,7 +150,7 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
         {menuItems.map((item) => (
           <div 
             key={item.id} 
-            className="w-[300px] sm:w-[386px] text-black rounded-[12px] overflow-hidden flex-shrink-0"
+            className="w-[300px] flex-shrink-0 overflow-hidden rounded-[12px] text-black sm:w-[386px]"
           >
             {/* Card Image */}
             <div className="relative h-[240px] w-full cursor-grab active:cursor-grabbing">
@@ -158,33 +158,33 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
               <MediaPreloader
                 src={item.image}
                 alt={item.name}
-                className="absolute top-0 left-0 w-full h-full object-cover rounded-[12px]"
+                className="absolute top-0 left-0 h-full w-full rounded-[12px] object-cover"
                 style={{ borderRadius: '12px' }}
               />
               <Image 
                 src={item.image}
                 alt={item.name}
                 fill
-                className="object-cover rounded-[12px]"
+                className="rounded-[12px] object-cover"
                 style={{ borderRadius: '12px' }}
                 draggable={false}
               />
             </div>
 
             {/* Card Content */}
-            <div className="mt-[-12px] z-10 relative bg-white rounded-[12px] pb-[12px] px-[16px]">
-              <div className="text-h5 font-bold py-3 selectable-text" style={{ cursor: "text", userSelect: "text" }}>{item.name}</div>
-              <div className="text-normal4 text-black/60 selectable-text" style={{ cursor: "text", userSelect: "text" }}>{item.description}</div>
+            <div className="relative z-10 mt-[-12px] rounded-[12px] bg-white px-[16px] pb-[12px]">
+              <div className="selectable-text py-3 text-h5 font-bold" style={{ cursor: "text", userSelect: "text" }}>{item.name}</div>
+              <div className="selectable-text text-normal4 text-black/60" style={{ cursor: "text", userSelect: "text" }}>{item.description}</div>
               {/* Price and Points */}
-              <div className="flex mt-1 items-center pb-3">
-                <span className="text-normal4 text-primary-dark font-bold selectable-text" style={{ cursor: "text", userSelect: "text" }}>$ {item.price}</span>
+              <div className="mt-1 flex items-center pb-3">
+                <span className="selectable-text text-normal4 font-bold text-primary-dark" style={{ cursor: "text", userSelect: "text" }}>$ {item.price}</span>
               </div>
               {/* Tags */}
-              <div className="flex flex-wrap gap-2 mt-3">
+              <div className="mt-3 flex flex-wrap gap-2">
                 {item.tags.map((tag, idx) => (
                   <span 
                     key={idx} 
-                    className={`text-normal4 px-[12px] py-[3px] rounded-full bg-black/[0.03] text-black/50 selectable-text`}
+                    className={`selectable-text rounded-full bg-black/[0.03] px-[12px] py-[3px] text-normal4 text-black/50`}
                     style={{ cursor: "text", userSelect: "text" }}
                   >
                     {tag}
