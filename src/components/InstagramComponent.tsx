@@ -54,14 +54,14 @@ const InstagramComponent = () => {
 		{
 			id: "2",
 			title: "rainaiscrazy",
-			image: "/Images/insta/2.png",
+			image: "/Images/insta/2.webp",
 			url: "https://www.instagram.com/p/DM37NwJvUxT/",
 			description: "If you’re in Hawaii stop by @sunteamix808 for their delicious drinks and desserts 😋😋😋 the coconut pudding with mango is their newest item and is a. Must try 😍",
 		},
 		{
 			id: "3",
 			title: "sunteamix808",
-			image: "/Images/insta/3.png",
+			image: "/Images/insta/3.webp",
 			url: "https://www.instagram.com/p/DQGiG2JDLR3/",
 			description: "The Maui Wowie worth flying to Honolulu for.",
 		},
@@ -82,7 +82,7 @@ const InstagramComponent = () => {
 		{
 			id: "6",
 			title: "sunteamix808",
-			image: "/Images/insta/6.png",
+			image: "/Images/insta/6.webp",
 			url: "https://www.instagram.com/p/DS8Tfx2jKKw",
 			description: "A sweet reminder and recap of 2025! Hoping for countless blessing and joy for the coming year. Happy holidays!!!",
 		}

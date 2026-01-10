@@ -168,13 +168,13 @@ function Featuring() {
         <div className='mx-auto flex w-full max-w-[1240px] flex-col items-center gap-8 lg:flex-row lg:justify-between lg:gap-0'>
           <div className='relative block aspect-square h-auto max-h-[540px] w-[60%] max-w-[540px] shrink-0 rounded-[24px] object-cover lg:h-[400px] lg:w-[400px] xl:h-[540px] xl:w-[540px]'>
             <MediaPreloader
-              src="/Images/featuring/3.png"
+              src="/Images/featuring/3.webp"
               alt="Mango Charm"
               borderRadius="24px"
               className='h-full w-full object-cover'
             />
             <Image
-              src="/Images/featuring/3.png"
+              src="/Images/featuring/3.webp"
               alt="Mango Charm"
               width={540} height={540} priority
               className='h-full w-full rounded-[24px] object-cover'

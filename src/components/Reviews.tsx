@@ -53,7 +53,7 @@ const Reviews = () => {
                         reviewText="Decent soufflé pancakes! The portion size is perfect for a snack (two pancakes stacked on top of each other). The batter was a tad bit dense to my liking, but still tasted pretty good!"
                         reviewerName="Annabelle"
                         redirect="https://share.google/YdqJhukpUi5VXdjk6"
-                        profileImage="/Images/reviews/review-1.png"
+                        profileImage="/Images/reviews/review-1.webp"
                     />
 
                     <ReviewCard
@@ -61,7 +61,7 @@ const Reviews = () => {
                         reviewText="Cute place that we happened to stop by on a Monday afternoon around 4:30 pm. They have a nice dining area with games, plenty of outlets, and wifi. The tea came out quickly..."
                         reviewerName="David Yoshihara"
                         redirect='https://share.google/w5GAVS5ef4PdGoGpK'
-                        profileImage="/Images/reviews/review-2.png"
+                        profileImage="/Images/reviews/review-2.webp"
                     />
 
                     <ReviewCard
@@ -69,7 +69,7 @@ const Reviews = () => {
                         reviewText="Best place in Honolulu to have a cup of tea. The interior is really aesthetic and calm. The place is really suitable if you want to work/study as it remains quite mostly..."
                         reviewerName="SK. Fazlee Rabby"
                         redirect='https://share.google/2NkwLo0iD89kijQDY'
-                        profileImage="/Images/reviews/review-3.png"
+                        profileImage="/Images/reviews/review-3.webp"
                     />
                 </div>
 

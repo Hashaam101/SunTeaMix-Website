@@ -4,7 +4,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Image from "next/image";
 import MediaPreloader from "@/components/MediaPreloader";
-import Hero from "@/../public/Images/hero.png";
+import Hero from "@/../public/Images/hero.webp";
 import ThemeButton from "@/components/ThemeBtn";
 import Home_menu_section from "@/components/Home_menu_section";
 import InstagramComponent from "@/components/InstagramComponent";
@@ -138,7 +138,7 @@ const Home = React.memo(function Home() {
       {/* promotion banner */}
       {/* <div>
         <PromotionalBanner
-          image="Product img 2.png"
+          image="Product img 2.webp"
           title="Order From Our Website"
           description="Order directly from our website to save money in fees, get faster service, earn free food via our rewards program, and support local business."
           buttonText="Order Now"
