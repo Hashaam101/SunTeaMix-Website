@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Image from "next/image";
 import MediaPreloader from "@/components/MediaPreloader";
 import Hero from "@/../public/Images/hero.webp";
+import HeroMobile from "@/../public/Images/hero-mobile.webp";
 import ThemeButton from "@/components/ThemeBtn";
 import Home_menu_section from "@/components/Home_menu_section";
 import InstagramComponent from "@/components/InstagramComponent";
@@ -52,7 +53,7 @@ const Home = React.memo(function Home() {
 
       {/* hero img section */}
       <div id="Home" className="relative h-[550px] w-full overflow-hidden rounded-[36px] sm:h-[500px]">
-        <div className="flex h-full flex-col items-start justify-end gap-2.5 bg-black/25 px-[20px] pb-8 backdrop-blur-[13px] sm:px-[40px]">
+        <div className="flex h-full flex-col items-start justify-start pt-[40px] sm:pt-0 sm:justify-end gap-2.5 bg-black/25 px-[20px] pb-8 backdrop-blur-[13px] sm:px-[40px]">
           <div className="border-l-3 border-white pl-[20px] text-normal1 text-white sm:text-normal2 sm:font-bold">
             Serving the Best Boba & Desserts in Honolulu
           </div>
@@ -64,11 +65,18 @@ const Home = React.memo(function Home() {
             Pancakes Near You! ✨
             <br />
           </div>
-          {/* Preloader for hero image */}
+          {/* Preloader for hero image (Desktop) */}
           <MediaPreloader
             src={typeof Hero === "string" ? Hero : (Hero.src ?? "")}
             alt="Home Page Image"
-            className="absolute top-0 left-0 -z-10 h-full w-full rounded-[36px] object-cover"
+            className="absolute top-0 left-0 -z-10 h-full w-full rounded-[36px] object-cover hidden sm:flex"
+            onLoaded={() => setHeroLoaded(true)}
+          />
+          {/* Preloader for hero image (Mobile) */}
+          <MediaPreloader
+            src={typeof HeroMobile === "string" ? HeroMobile : (HeroMobile.src ?? "")}
+            alt="Home Page Image"
+            className="absolute top-0 left-0 -z-10 h-full w-full rounded-[36px] object-cover flex sm:hidden"
             onLoaded={() => setHeroLoaded(true)}
           />
           {/* Only show overlays if heroLoaded */}

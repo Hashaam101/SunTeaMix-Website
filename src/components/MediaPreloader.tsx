@@ -86,7 +86,7 @@ const MediaPreloader: React.FC<MediaPreloaderProps> = ({
         if (onLoaded) onLoaded();
       }
     }
-  }, [src, type, onLoaded, loaded]);
+  }, [src, type, onLoaded, loaded, forcePreloader]);
 
   return (
   <div className={`absolute inset-0 flex items-center justify-center ${className}`} style={{ ...style, borderRadius }}>

@@ -37,7 +37,7 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      "react-hooks/immutability": "warn",
+      "react-hooks/immutability": "error",
       "functional/no-expression-statements": [
         "warn",
         {

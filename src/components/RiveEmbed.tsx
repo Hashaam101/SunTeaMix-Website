@@ -31,10 +31,12 @@ export default function RiveButton({ onBtnPress, isDisabled = false }: RiveButto
   const clickInput = useStateMachineInput(rive, "State Machine 1", "clck", false);
 
   const handleMouseEnter = useCallback(() => {
+    // eslint-disable-next-line functional/no-expression-statements, react-hooks/immutability
     if (hoverInput) hoverInput.value = true;
   }, [hoverInput]);
 
   const handleMouseLeave = useCallback(() => {
+    // eslint-disable-next-line functional/no-expression-statements, react-hooks/immutability
     if (hoverInput) hoverInput.value = false;
   }, [hoverInput]);
 
@@ -42,8 +44,10 @@ export default function RiveButton({ onBtnPress, isDisabled = false }: RiveButto
     if (isDisabled) return;
 
     if (clickInput) {
+      // eslint-disable-next-line functional/no-expression-statements, react-hooks/immutability
       clickInput.value = true; 
       setTimeout(() => {
+        // eslint-disable-next-line functional/no-expression-statements
         if (clickInput) clickInput.value = false;
       }, 1000); 
     }
@@ -53,6 +57,7 @@ export default function RiveButton({ onBtnPress, isDisabled = false }: RiveButto
         await onBtnPress();
       } catch (error) {
         console.error("Error during onBtnPress:", error);
+        // eslint-disable-next-line functional/no-expression-statements
         if (clickInput) clickInput.value = false;
       }
     }

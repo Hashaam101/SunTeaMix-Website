@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -22,6 +22,7 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
 	const observerRef = useRef<IntersectionObserver | null>(null);
+	const [mounted, setMounted] = useState(false);
 
 	const handleVisibility = useCallback((isVisible: boolean) => {
 		if (isVisible) {
@@ -36,6 +37,7 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 	}, []);
 
 	useEffect(() => {
+		setMounted(true); // eslint-disable-line react-hooks/set-state-in-effect
 		if (!containerRef.current) return;
 
 		observerRef.current = new IntersectionObserver(
@@ -91,6 +93,22 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 
 	if (!posts || posts.length === 0) {
 		return <p>No Instagram posts to display.</p>;
+	}
+
+	// Prevent hydration error by rendering Slider only on client
+	if (!mounted) {
+		// Return a placeholder structure that matches the dimensions roughly to avoid layout shift, or just null/loading
+		return (
+			<div className="instagram-carousel-container mx-auto w-[95%]">
+				<div className="flex gap-4 p-6 overflow-hidden">
+					{posts.slice(0, 4).map((post, index) => (
+						<div key={index} className="flex-1">
+							<InstagramPostCard post={post} />
+						</div>
+					))}
+				</div>
+			</div>
+		);
 	}
 
 	return (

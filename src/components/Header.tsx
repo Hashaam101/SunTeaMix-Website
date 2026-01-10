@@ -41,11 +41,11 @@ function Header( {onClick} : {onClick: () => void}) {
 
 
   return (
-    <div className="w-full p-[20px]">
+    <div className="w-full px-[10px] py-[20px] md:p-[20px]">
       
-      <div className={`grid w-full grid-cols-2 items-center md:grid-cols-3`}>
-        {/* Left Section */}
-        <div className="hidden justify-start md:flex">
+      <div className={`grid w-full grid-cols-3 items-center`}>
+        {/* Left Section - Hamburger Menu */}
+        <div className="flex justify-start">
             <AnimatedMenuButton
                 menuItems={[
                     { name: "Home", onclick: () => { scrollToSection('Home') } },
@@ -59,11 +59,11 @@ function Header( {onClick} : {onClick: () => void}) {
             />           
         </div>
 
-        {/* Center Section (Always Centered) */}
-        <div className={`flex justify-start md:justify-center`}>
+        {/* Center Section - Logo */}
+        <div className={`flex justify-center`}>
             <div
             className="relative cursor-pointer text-white"
-            onClick={() => { window.location.pathname = "/"; }}
+            onClick={() => { router.push("/"); }}
             >
             <span
               className="absolute inset-0 rounded-full border-[0.5px]"
@@ -85,10 +85,23 @@ function Header( {onClick} : {onClick: () => void}) {
 
         {/* Right Section */}
         <div className="flex w-full justify-end">
-            <AnimatedCTAButton 
-              buttonLeft={() => { router.push("tel:+1(808)219-5749") }}
-              buttonRight={() => { window.open("https://www.clover.com/online-ordering/sun-tea-mix-honolulu", "_blank") }}
-            />
+            {/* Desktop View */}
+            <div className="hidden md:block">
+              <AnimatedCTAButton 
+                buttonLeft={() => { router.push("tel:+1(808)219-5749") }}
+                buttonRight={() => { window.open("https://www.clover.com/online-ordering/sun-tea-mix-honolulu", "_blank") }}
+              />
+            </div>
+
+            {/* Mobile View - Simplified Order Now Button */}
+            <div className="md:hidden">
+              <button
+                className="flex h-[41px] items-center justify-center rounded-lg bg-primary px-4 text-normal2 font-bold whitespace-nowrap text-white transition-opacity hover:opacity-90"
+                onClick={() => { window.open("https://www.clover.com/online-ordering/sun-tea-mix-honolulu", "_blank") }}
+              >
+                Order Now
+              </button>
+            </div>
         </div>
       </div>
     </div>
@@ -96,6 +109,3 @@ function Header( {onClick} : {onClick: () => void}) {
 }
 
 export default Header
-
-
-

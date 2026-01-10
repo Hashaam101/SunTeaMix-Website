@@ -35,7 +35,7 @@ export const AnimatedCTAButton:React.FC<AnimatedCTAButtonProps> = ({ buttonLeft,
           onClick={buttonLeft}
         >
           <div className="flex w-full items-center justify-between">
-						<motion.div className='mx-auto overflow-hidden text-normal2 font-bold text-nowrap text-grey'
+						<motion.div className='mx-auto overflow-hidden text-normal2 font-bold whitespace-nowrap text-grey'
 							animate={{
 								width: hoveredButton === 'right' ? "0%" : "100%",
 								borderTopLeftRadius: hoveredButton === 'left' ? "8px" : "0px",
@@ -68,7 +68,7 @@ export const AnimatedCTAButton:React.FC<AnimatedCTAButtonProps> = ({ buttonLeft,
           onMouseLeave={() => setHoveredButton(null)}
         >
           <div className="flex w-full items-center justify-between">
-            <motion.div className='mx-auto ml-1 flex-1 overflow-hidden text-normal2 font-bold text-nowrap text-white'
+            <motion.div className='mx-auto ml-1 flex-1 overflow-hidden text-normal2 font-bold whitespace-nowrap text-white'
 							animate={{
 								width: hoveredButton === 'left' ? "0%" : "50%",
 								borderTopLeftRadius: hoveredButton === 'right' ? "8px" : "0px",
