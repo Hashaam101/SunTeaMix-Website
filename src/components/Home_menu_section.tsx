@@ -4,7 +4,7 @@ import { useCallback, useRef, useState } from 'react'
 
 import Image from 'next/image';
 
-import arrow from '@/../public/Svgs/Arrow.svg';
+// import arrow from '@/../public/Svgs/Arrow.svg';
 import ScrollableMenuCards, { ScrollableMenuRef } from './Home_menu_card';
 
 export interface MenuItem {
@@ -116,8 +116,10 @@ export default function Home_menu_section() {
           }}
         >
           <Image
-            src={arrow}
+            src="/Svgs/Arrow.svg"
             alt="Arrow"
+            width={24}
+            height={24}
             className="m-[10px] h-[24px] w-[24px] cursor-pointer"
           />
         </div>

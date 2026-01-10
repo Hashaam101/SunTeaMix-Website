@@ -1,26 +1,18 @@
 @import "tailwindcss";
 
-@import "./../styles/_variables.css"; 
+@import "./../styles/_variables.css";
 @import "./../styles/_keyframe-animations.css";
 
 @font-face {
   font-family: "CretoDispay";
-  src: url("@/../../../public/Fonts/CreatoDisplay-Regular.otf") format("opentype");
+  src: url("/Fonts/CreatoDisplay-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "CretoDispay Black";
-  src: url("@/../../../public/Fonts/CreatoDisplay-Black.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: "Not the far east";
-  src: url("@/../../../public/Fonts/Not\ the\ far\ east.otf") format("opentype");
+  src: url("/Fonts/CreatoDisplay-Black.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -55,10 +47,10 @@
   --font-bold: 700;
   --font-extra-bold: 800;
 
-  --font-*:initial;
-  --default-font-family:"CretoDispay";
-  --font-creato-black:"CretoDispay Black";
-  --font-not-east:"Not the far east";
+  --font-*: initial;
+  --default-font-family: "CretoDispay";
+  --font-creato-black: "CretoDispay Black";
+
   --leading-normal: 1.2;
 }
 
