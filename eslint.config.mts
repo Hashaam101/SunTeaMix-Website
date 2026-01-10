@@ -13,7 +13,7 @@ import globals from "globals";
 
 export default tseslint.config(
   {
-    ignores: [".next/**", "node_modules/**"],
+    ignores: [".next/**", "node_modules/**", "out/**", "build/**", ".vercel/**", "coverage/**"],
   },
   {
     languageOptions: {

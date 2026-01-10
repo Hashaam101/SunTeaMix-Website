@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 
 // --- METADATA STAYS HERE ---
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   title: "Sun Tea Mix | Best Boba, Soufflé Pancakes & Desserts in Honolulu",
   description: "Takeaway & Delivery Available. Refreshing Boba, Soufflé Pancakes, Smoothies. Serving the Best Boba & Desserts in Honolulu. Savor the Best Bubble Tea & Soufflé Pancakes Near You! 4.5 ★ average from 374 reviews across all platforms. Located at 400 Keawe St, Honolulu, HI 96813. Open Daily: 11:00 AM – 9:00 PM.",
   keywords: [
