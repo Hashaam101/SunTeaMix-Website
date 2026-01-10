@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,25 +18,10 @@ interface InstagramGridProps {
 }
 
 const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
-	const [slideHeight, setSlideHeight] = useState<number>(400);
-	const [currentSlide, setCurrentSlide] = useState(0);
 	const sliderRef = useRef<Slider>(null);
 	const containerRef = useRef<HTMLDivElement>(null);
 	const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
 	const observerRef = useRef<IntersectionObserver | null>(null);
-
-	const calculateSlideHeight = useCallback((containerWidth: number) => {
-		let newSlideHeight = 400;
-
-		if (containerWidth < 480) {
-			newSlideHeight = containerWidth;
-		} else if (containerWidth < 768) {
-			newSlideHeight = containerWidth * 0.8;
-		} else {
-			newSlideHeight = 400;
-		}
-		setSlideHeight(newSlideHeight);
-	}, []);
 
 	const handleVisibility = useCallback((isVisible: boolean) => {
 		if (isVisible) {
@@ -49,19 +34,6 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 			clearInterval(autoScrollRef.current);
 		}
 	}, []);
-
-	useEffect(() => {
-		const handleResize = () => {
-			const containerWidth =
-				sliderRef.current?.innerSlider?.list?.offsetWidth ||
-				window.innerWidth * 0.95;
-			calculateSlideHeight(containerWidth);
-		};
-
-		handleResize();
-		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
-	}, [calculateSlideHeight]);
 
 	useEffect(() => {
 		if (!containerRef.current) return;
@@ -86,7 +58,6 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		arrows: true,
-		beforeChange: (_: number, next: number) => setCurrentSlide(next),
 		responsive: [
 			{
 				breakpoint: 1440,
@@ -116,23 +87,6 @@ const InstagramCarousel: React.FC<InstagramGridProps> = ({ posts }) => {
 				},
 			},
 		],
-		afterChange: () => {
-			if (sliderRef.current) {
-				// Access the slider's list element more safely
-				const listElement = sliderRef.current.innerSlider?.list;
-				if (listElement) {
-					calculateSlideHeight(listElement.offsetWidth);
-				}
-			}
-		},
-		onInit: () => {
-			if (sliderRef.current) {
-				const listElement = sliderRef.current.innerSlider?.list;
-				if (listElement) {
-					calculateSlideHeight(listElement.offsetWidth);
-				}
-			}
-		},
 	};
 
 	if (!posts || posts.length === 0) {

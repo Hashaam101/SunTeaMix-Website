@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 
 interface ReviewCardProps {
@@ -18,7 +17,6 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   profileImage,
   redirect
 }) => {
-  const router = useRouter();
   // Ensure star count is between 0 and 5
   const stars = Math.min(Math.max(0, starCount), 5);
   

@@ -7,7 +7,6 @@ import MediaPreloader from "@/components/MediaPreloader";
 import Hero from "@/../public/Images/hero.png";
 import ThemeButton from "@/components/ThemeBtn";
 import Home_menu_section from "@/components/Home_menu_section";
-import PromotionalBanner from "@/components/Home_promotional_banner";
 import InstagramComponent from "@/components/InstagramComponent";
 import Reviews from "@/components/Reviews";
 import FAQSection from "@/components/FAQ_section";
@@ -30,6 +29,7 @@ const Home = React.memo(function Home() {
   React.useEffect(() => {
     // Simple analytics: log page load
     if (typeof window !== 'undefined') {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).__pageLoaded = true;
       // You could send analytics here
     }
@@ -45,7 +45,7 @@ const Home = React.memo(function Home() {
     }
   };
   return (
-    <div className="p-[10px]">
+    <div className="p-2.5">
       <Header onClick={() => { /* handle header click here or leave empty */ }} />
 
       <div className="sm:h-[20px]" />
@@ -185,7 +185,7 @@ const Home = React.memo(function Home() {
           Sun Tea Mix
         </div>
         <div className="mx-2 mb-[32px] text-normal2 text-grey">
-          Bubble tea and soufflé pancakes in Honolulu, featuring Sun Tea Mix’s viral Coco Mango dessert.
+          Bubble tea and soufflé pancakes in Honolulu, featuring Sun Tea Mix&apos;s viral Coco Mango dessert.
         </div>
 
         <div className="container mx-auto">
@@ -296,7 +296,7 @@ const Home = React.memo(function Home() {
                         <span className="hover:underline">Featuring</span>
                       </button>
                       <button onClick={() => scrollToSection("FAQ's")} className="cursor-pointer transition-colors hover:text-primary">
-                        <span className="hover:underline">FAQ's</span>
+                        <span className="hover:underline">FAQ&apos;s</span>
                       </button>
                       <button onClick={() => scrollToSection('Location')} className="cursor-pointer transition-colors hover:text-primary">
                         <span className="hover:underline">Location</span>
@@ -319,7 +319,7 @@ const Home = React.memo(function Home() {
               Sun Tea Mix Inc. 2025 All Rights Reserved
             </p>
             <p className="text-nowrap">
-              Made with&nbsp;<a target="_blank" href="http://tableturnerr.com"><span className="hover:underline">TableTurnerr.com </span></a>
+              Made with&nbsp;<a target="_blank" rel="noreferrer" href="http://tableturnerr.com"><span className="hover:underline">TableTurnerr.com </span></a>
             </p>
           </div>
         </div>

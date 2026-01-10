@@ -3,7 +3,6 @@
 // To disable and return to normal, set:
 //   window.__FORCE_PRELOADERS__ = false;
 import React, { useState } from "react";
-import Spinner from "./Spinner";
 
 interface MediaPreloaderProps {
   src: string;

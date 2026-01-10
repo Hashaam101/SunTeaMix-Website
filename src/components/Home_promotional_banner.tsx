@@ -9,7 +9,6 @@ interface PromotionalBannerProps {
   buttonUrl: string;
 }
 
-import placeholderImg from "@/../public/Images/Product img 2.png";
 import ThemeButton from './ThemeBtn';
 
 
@@ -32,7 +31,7 @@ const PromotionalBanner: React.FC<PromotionalBannerProps> = ({
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image 
-          src={placeholderImg}
+          src={image}
           alt="Promotional background"
           fill
           className="object-cover"
@@ -57,7 +56,7 @@ const PromotionalBanner: React.FC<PromotionalBannerProps> = ({
 						{description}
 					</p>
 					
-					<ThemeButton/>
+					<ThemeButton text={buttonText} href={buttonUrl}/>
 
           <div className='block h-3 sm:hidden'/>
 

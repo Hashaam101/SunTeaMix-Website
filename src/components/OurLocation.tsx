@@ -15,7 +15,7 @@ const LocationComponent = () => {
     
     contact: {
       phone: "(808) 219-5749",
-      email: "email@email.com"
+      email: "suntea808@gmail.com"
     },
 
     openingTime: "Timing",

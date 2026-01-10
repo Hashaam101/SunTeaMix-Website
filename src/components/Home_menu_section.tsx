@@ -1,6 +1,5 @@
 "use client";
 
-import { div } from 'framer-motion/client';
 import { useCallback, useRef, useState } from 'react'
 
 import Image from 'next/image';
@@ -8,13 +7,11 @@ import Image from 'next/image';
 import arrow from '@/../public/Svgs/Arrow.svg';
 import ScrollableMenuCards, { ScrollableMenuRef } from './Home_menu_card';
 
-import placeholderImg from "@/../public/Images/Product img 1.png";
-
 export interface MenuItem {
   id: string;
   name: string;
   image: string;
-  price: number;
+  price: string;
   loyaltyPoints: number;
   description: string;
   tags: string[];
@@ -28,7 +25,7 @@ export default function Home_menu_section() {
       id: '1',
       name: 'Coco Mango',
       image: 'Images/ProductImg_CocoMango.webp',
-      price: 8.95,
+      price: "$ 10.99",
       loyaltyPoints: 0,
       description: 'Creamy coconut jelly topped with fresh mango chunks — our signature summer special.',
       tags: ['With Mango', 'Without Mango'],
@@ -38,7 +35,7 @@ export default function Home_menu_section() {
       id: '2',
       name: "Brown Sugar Soufflé Pancakes",
       image: 'Images/ProductImg_BrownSugarSoufflePancakes.webp',
-      price: 12.95,
+      price: "$ 11.99",
       loyaltyPoints: 0,
       description: 'Fluffy Japanese-style soufflé pancakes drizzled with brown sugar syrup & boba pearls.',
       tags: ['Pancake', 'Boba Pearls', 'Dessert'],
@@ -48,7 +45,7 @@ export default function Home_menu_section() {
       id: '3',
       name: 'Classic Milk Tea',
       image: 'Images/ProductImg_ClassicMilkTea.webp',
-      price: 6.50,
+      price: "$ 5.29 / $ 6.29",
       loyaltyPoints: 0,
       description: 'Smooth black tea with rich milk — the foundation of every great boba shop.',
       tags: ['Tea'],
@@ -58,7 +55,7 @@ export default function Home_menu_section() {
       id: '4',
       name: 'Strawberry Soufflé Pancakes',
       image: 'Images/ProductImg_StrawberrySoufflePancakes.webp',
-      price: 11.95,
+      price: "$ 11.99",
       loyaltyPoints: 0,
       description: 'Light, airy pancakes topped with fresh strawberries & cream.',
       tags: ['Strawberry', 'Pancakes'],
@@ -68,7 +65,7 @@ export default function Home_menu_section() {
       id: '5',
       name: 'Tropical Lava Flow',
       image: 'Images/ProductImg_TropicalLavaFlow.webp',
-      price: 7.95,
+      price: "$ 7.99",
       loyaltyPoints: 0,
       description: 'Refreshing fruit tea layered with strawberry, pineapple, and mango.',
       tags: ['Fruit Tea', 'Strawberry', 'Pineapple', 'Mango'],
@@ -92,8 +89,6 @@ export default function Home_menu_section() {
       }
   };
 
-  const [isHovering, setIsHovering] = useState(false);
-
   return (
     <div className='group relative flex h-full w-full flex-col overflow-hidden rounded-l-[12px] bg-primary-dark p-[20px] sm:h-[460px] sm:flex-row'>
       <div
@@ -116,8 +111,6 @@ export default function Home_menu_section() {
 				</div>
 				<div className='flex aspect-square w-fit items-center justify-center rounded-full transition-all duration-400 group-hover:translate-x-5 hover:bg-white/20' 
           onClick={handleNextClick}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
           style={{
             rotate: isMenuAtEnd ? '180deg' : '0deg',
           }}
@@ -141,60 +134,3 @@ export default function Home_menu_section() {
 )
 }
 
-interface LocalScrollableMenuCardsProps {
-  menuItems: MenuItem[];
-  [key: string]: any;
-}
-
-const LocalScrollableMenuCards = ({ menuItems, ...props }: LocalScrollableMenuCardsProps) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    isDragging.current = true;
-    startX.current = e.pageX - (scrollContainerRef.current?.getBoundingClientRect().left || 0);
-    scrollLeft.current = scrollContainerRef.current?.scrollLeft || 0;
-    document.body.style.userSelect = "none";
-  };
-
-  const handleMouseLeave = () => {
-    isDragging.current = false;
-    document.body.style.userSelect = "";
-  };
-
-  const handleMouseUp = () => {
-    isDragging.current = false;
-    document.body.style.userSelect = "";
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging.current) return;
-    e.preventDefault();
-    const x = e.pageX - (scrollContainerRef.current?.getBoundingClientRect().left || 0);
-    const walk = (x - startX.current) * 1; // scroll speed
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
-    }
-  };
-
-  return (
-    <div
-      ref={scrollContainerRef}
-      className="scrollbar-hide flex cursor-grab gap-4 overflow-x-auto active:cursor-grabbing"
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-    >
-      {/* Render your menu items here */}
-      {menuItems.map(item => (
-        <div key={item.id} className="min-w-[200px]">{item.name}</div>
-      ))}
-    </div>
-  );
-};
-
-// Remove the export default for the local component

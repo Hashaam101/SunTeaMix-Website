@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { AnimatedCTAButton } from './CTA_header_btn';
 import logo from "@/assets/Images/Logo.webp";
 import Image from 'next/image';

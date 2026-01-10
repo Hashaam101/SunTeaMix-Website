@@ -3,9 +3,6 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
-import { on } from 'events';
-import { i } from 'framer-motion/client';
 
 interface MenuItem {
   name: string;
@@ -18,15 +15,9 @@ interface AnimatedMenuButtonProps {
 
 export function AnimatedMenuButton({ menuItems }: AnimatedMenuButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-  };
-
-  const navigateTo = (href: string) => {
-    router.push(href);
-    setIsOpen(false);
   };
 
   // Variants for button animation

@@ -20,7 +20,9 @@ export default function RiveButton({ onBtnPress, isDisabled = false }: RiveButto
     
     // Lifecycle Callbacks (useful for debugging)
     onLoad: () => console.log("Rive: Loaded"),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onLoadError: (error:any) => console.error("Rive: Load Error", error),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onStateChange: (e:any) => console.log("Rive: State Change", e.data),
   });
 

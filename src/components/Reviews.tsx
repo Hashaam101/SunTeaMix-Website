@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import ReviewCard from './ReviewCard';
 // For BG Pattern
 // import pattern from "@/../public/Svgs/BG Pattern.svg";

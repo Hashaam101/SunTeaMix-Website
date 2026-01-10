@@ -2,7 +2,6 @@ import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef,
 import Image from 'next/image';
 import MediaPreloader from './MediaPreloader';
 
-import placeholderImg from "@/../public/Images/menu.png";
 import { MenuItem } from './Home_menu_section';
 
 export interface ScrollableMenuRef {
@@ -18,7 +17,7 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
   ({ menuItems, onScrollEndChange }, ref) => {
 
     const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const [isAtEnd, setIsAtEnd] = useState(false);
+    const [, setIsAtEnd] = useState(false);
     // Store the timeout ID to clear it if component unmounts during scroll debounce
     const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const isDragging = useRef(false);
@@ -177,7 +176,7 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
               <div className="selectable-text text-normal4 text-black/60" style={{ cursor: "text", userSelect: "text" }}>{item.description}</div>
               {/* Price and Points */}
               <div className="mt-1 flex items-center pb-3">
-                <span className="selectable-text text-normal4 font-bold text-primary-dark" style={{ cursor: "text", userSelect: "text" }}>$ {item.price}</span>
+                <span className="selectable-text text-normal4 font-bold text-primary-dark" style={{ cursor: "text", userSelect: "text" }}>{item.price}</span>
               </div>
               {/* Tags */}
               <div className="mt-3 flex flex-wrap gap-2">
@@ -212,5 +211,7 @@ const ScrollableMenuCards = forwardRef<ScrollableMenuRef, ScrollableMenuCardsPro
   );
 }
 );
+
+ScrollableMenuCards.displayName = 'ScrollableMenuCards';
 
 export default ScrollableMenuCards;

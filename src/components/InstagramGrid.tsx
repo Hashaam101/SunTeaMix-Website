@@ -103,7 +103,7 @@ const InstagramGrid: React.FC<InstagramGridProps> = ({ posts }) => {
 					className="flex flex-1 flex-col gap-4"
 					style={{ height: "100%" }}
 				>
-					{columnData.map((post, postIndex) => {
+					{columnData.map((post) => {
 						// Skip rendering empty slots
 						if (!post.image) return null;
 
