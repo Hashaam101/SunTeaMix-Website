@@ -1,0 +1,10 @@
+# User-agent: *
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sunteamix.co
+
+# Sitemap
+Sitemap: https://sunteamix.co/sitemap.xml
