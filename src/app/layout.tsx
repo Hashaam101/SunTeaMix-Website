@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TabTitleHandler from "@/components/TabTitleHandler";
-import Script from 'next/script';
 // import ClientLayout from "@/components/ClientLayout"; // Import the new client wrapper
 
 const geistSans = Geist({
@@ -69,47 +68,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-
-
   return (
     <html lang="en">
       <head>
-
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WRT4V9JKN"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5WRT4V9JKN');
+          `
+        }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <TabTitleHandler />
-
         {children}
         {/* <ClientLayout>
           <AuthProvider>
             {children}
           </AuthProvider>
         </ClientLayout> */}
-
-
-        {gaMeasurementId && (
-          <>
-            <Script
-              strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-            />
-            <Script
-              id="google-analytics"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `
-                   window.dataLayer = window.dataLayer || [];
-                   function gtag(){dataLayer.push(arguments);}
-                   gtag('js', new Date());
-                   gtag('config', '${gaMeasurementId}');
-                 `
-              }}
-            />
-          </>
-        )}
       </body>
     </html>
   );
